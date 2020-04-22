@@ -36,7 +36,7 @@ export default Vue.extend({
   },
   mounted(): void {
     AnimationService.timeLine()
-      .from('h1', {
+      .from('.start-heading h1', {
         delay: 1.5,
         duration: 1,
         opacity: 0,
