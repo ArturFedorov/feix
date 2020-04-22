@@ -1,14 +1,18 @@
 <template>
   <div class="home">
-    <h1>Elena</h1>
+    <Start />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Start from '@/components/Start/Start.vue';
 import { db } from '@/api/db';
 export default Vue.extend({
   name: 'Home',
+  components: {
+    Start
+  },
   data() {
     return {
       years: []

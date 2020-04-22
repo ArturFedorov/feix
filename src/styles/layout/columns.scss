@@ -1,0 +1,20 @@
+.columns {
+  display: flex;
+
+  &.is-vcentered {
+    align-items: center;
+  }
+
+  &.is-column {
+    flex-direction: column;
+
+    &.is-vcentered {
+      justify-content: center;
+    }
+  }
+
+
+  .column {
+    width: 50%;
+  }
+}

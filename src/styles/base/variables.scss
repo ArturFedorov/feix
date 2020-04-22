@@ -1,9 +1,8 @@
 // colors
-$red: #F02D09;
-$blue: #09CCF0;
-$black: #121212;
-$purple: #A009F0;
-$white: #ffffff;
+$purple: #762CBF;
+$purple-light: #5F5CBF;
+$blue: #2C2CBF;
+$green: #2CBFBF;
 $gray: #808080;
 
 // Building Units
@@ -34,10 +33,10 @@ $font_path: '/fonts/';
 $font-size-base: 18px;
 $font-size-small: 16px;
 $font-size-caption: 12px;
-$font-size-h0: 259px;
+$font-size-h0: 75px;
 $font-size-h1: 64px;
 $font-size-h2: 48px;
-$font-size-h3: 24px;
+$font-size-h3: 36px;
 
 // line-height
 $line-height-base: 1.2;
@@ -60,3 +59,5 @@ $large-desktop: 'max-width: 1799px';
 $from-desktop: 'min-width: 1024px';
 $from-wide-desktop: 'min-width: 1500px';
 
+$min_width: 320px;
+$max_width: 1367px;

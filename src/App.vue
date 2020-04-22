@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <Header />
-    <div class="main grid">
+    <div class="main">
       <div class="main-left grid-left">
 
       </div>
@@ -15,14 +14,10 @@
   </div>
 </template>
 <script lang="ts">
-  import Vue from 'vue';
-  import Header from './components/root/Header.vue';
-  export default Vue.extend({
-    name: 'App',
-    components: {
-      Header
-    }
-  });
+import Vue from 'vue';
+export default Vue.extend({
+  name: 'App'
+});
 </script>
 <style lang="scss">
   .main {
