@@ -12,36 +12,3 @@
 h1 {
   @include font-face($font-bold, $font-size-h1);
 }
-
-h2 {
-  @include font-face($font-bold, $font-size-h2);
-}
-
-h3 {
-  @include font-face($font-bold, $font-size-h3);
-}
-
-div,
-p {
-  @include font-face($font-light, $font-size-base);
-}
-
-.p-body {
-  @include font-face($font-light, $font-size-small);
-}
-
-.caption {
-  @include font-face($font-thin, $font-size-caption);
-}
-
-div.is-red,
-p.is-red,
-span.is-red {
-  color: $red;
-}
-
-div.is-bold,
-p.is-bold,
-span.is-bold {
-  font-weight: $font-bold;
-}
