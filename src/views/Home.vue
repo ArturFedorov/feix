@@ -17,17 +17,37 @@
         class="home-features"
         :startAnimation="animationMap['features']"/>
     </IntersectionObserver>
+    <IntersectionObserver
+      :rootMargin="rootMargin"
+      @enter="elementEnter('advantages')"
+      @leave="elementLeave('advantages')">
+      <Advantages
+        class="home-advantages"
+        :startAnimation="animationMap['advantages']"/>
+    </IntersectionObserver>
+    <IntersectionObserver
+      :rootMargin="rootMargin"
+      @enter="elementEnter('devices')"
+      @leave="elementLeave('devices')">
+      <Devices
+        class="home-advantages"
+        :startAnimation="animationMap['devices']"/>
+    </IntersectionObserver>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import About from '@/components/common/About/About.vue';
-import Features from '@/components/Features/Features.vue';
+import Advantages from '@/components/advantages/Advantages.vue';
+import Devices from '@/components/devices/Devices.vue';
+import Features from '@/components/features/Features.vue';
 import Start from '@/components/Start/Start.vue';
 export default Vue.extend({
   name: 'Home',
   components: {
+    Advantages,
+    Devices,
     Features,
     Start,
     About
@@ -39,7 +59,9 @@ export default Vue.extend({
       startAnimation: false,
       animationMap: {
         'about': false,
-        'features': false
+        'features': false,
+        'advantages': false,
+        'devices': false
       } as { [key: string]: boolean }
     };
   },

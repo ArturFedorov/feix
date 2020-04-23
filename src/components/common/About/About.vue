@@ -88,6 +88,12 @@ export default Vue.extend({
 
     &-heading {
       margin-bottom: 4em;
+
+      @media ($desktop) {
+        .h0 {
+          font-size: $font-size-h1;
+        }
+      }
     }
 
     &-text {
@@ -99,6 +105,10 @@ export default Vue.extend({
       position: absolute;
       max-width: 100%;
       left: -15%;
+
+      @media ($desktop) {
+        left: -20%;
+      }
     }
   }
 </style>

@@ -58,11 +58,19 @@ export default Vue.extend({
     padding: 0 6em 2em 6em;
 
     &-heading {
-
+      @media ($desktop) {
+        .h0 {
+          font-size: $font-size-h1;
+        }
+      }
     }
 
     &-caption {
       margin-top: auto;
+
+      @media ($desktop) {
+        font-size: $font-size-h4;
+      }
     }
 
     &-column {
@@ -80,11 +88,20 @@ export default Vue.extend({
       top: -15%;
       max-width: 100%;
       z-index: -1;
+
+      @media ($desktop) {
+        top: -10%;
+        left: -30%;
+      }
     }
 
     &-logo {
       width: 140px;
       margin-left: auto;
+
+      @media ($desktop) {
+        width: 100px;
+      }
     }
   }
 

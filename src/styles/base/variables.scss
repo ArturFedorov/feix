@@ -4,6 +4,7 @@ $purple-light: #5F5CBF;
 $blue: #2C2CBF;
 $green: #2CBFBF;
 $gray: #808080;
+$white: #ffffff;
 
 // Building Units
 $building-unit: 8px;
@@ -53,7 +54,7 @@ $font-ultra: 900;
 // media queries
 $mobile: 'max-width: 767px';
 $tablet: 'max-width: 1023px';
-$desktop: 'max-width: 1279px';
+$desktop: 'max-width: 1366px';
 $wide-desktop: 'max-width: 1499px';
 $large-desktop: 'max-width: 1799px';
 
@@ -61,6 +62,6 @@ $from-desktop: 'min-width: 1024px';
 $from-wide-desktop: 'min-width: 1500px';
 
 $min_width: 320px;
-$max_width: 1367px;
+$max_width: 1366px;
 
 $min_height: 1500px;
