@@ -33,6 +33,22 @@
         class="home-advantages"
         :startAnimation="animationMap['devices']"/>
     </IntersectionObserver>
+    <IntersectionObserver
+      :rootMargin="rootMargin"
+      @enter="elementEnter('layers')"
+      @leave="elementLeave('layers')">
+      <Layers
+        class="home-layers"
+        :startAnimation="animationMap['layers']"/>
+    </IntersectionObserver>
+    <IntersectionObserver
+      :rootMargin="rootMargin"
+      @enter="elementEnter('contact')"
+      @leave="elementLeave('contact')">
+      <Contact
+        class="home-contact"
+        :startAnimation="animationMap['contact']"/>
+    </IntersectionObserver>
   </div>
 </template>
 
@@ -40,15 +56,19 @@
 import Vue from 'vue';
 import About from '@/components/common/About/About.vue';
 import Advantages from '@/components/advantages/Advantages.vue';
+import Contact from '@/components/contact/Contact.vue';
 import Devices from '@/components/devices/Devices.vue';
 import Features from '@/components/features/Features.vue';
+import Layers from '@/components/layers/Layers.vue';
 import Start from '@/components/Start/Start.vue';
 export default Vue.extend({
   name: 'Home',
   components: {
     Advantages,
+    Contact,
     Devices,
     Features,
+    Layers,
     Start,
     About
   },
@@ -61,7 +81,9 @@ export default Vue.extend({
         'about': false,
         'features': false,
         'advantages': false,
-        'devices': false
+        'devices': false,
+        'layers': false,
+        'contact': false
       } as { [key: string]: boolean }
     };
   },
@@ -75,3 +97,8 @@ export default Vue.extend({
   }
 });
 </script>
+<style lang="scss" scoped>
+  .home {
+    overflow-x: hidden;
+  }
+</style>

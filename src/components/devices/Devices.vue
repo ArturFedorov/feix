@@ -25,16 +25,7 @@
           High perfomance on mobile devices
         </h2>
       </div>
-
-      <div class="column devices-column">
-        <img
-          class="devices-phone"
-          src="../../assets/images/phone.png">
-      </div>
     </div>
-    <img
-      class="devices-wave"
-      src="../../assets/images/long-wave-green.svg">
   </div>
 </template>
 
@@ -96,13 +87,6 @@ export default Vue.extend({
       width: 115%;
       bottom: -20%;
       transform-origin: left center;
-    }
-
-    &-phone {
-      position: absolute;
-      z-index: 3;
-      top: 50%;
-      right: 6em;
     }
   }
 </style>

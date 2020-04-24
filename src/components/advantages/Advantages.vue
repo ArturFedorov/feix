@@ -111,7 +111,6 @@ export default Vue.extend({
     min-height: $min_height;
     position: relative;
     padding: 0 6em 2em 6em;
-    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
