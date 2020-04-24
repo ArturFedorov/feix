@@ -39,10 +39,10 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  export default Vue.extend({
-    name: 'Layers'
-  });
+import Vue from 'vue';
+export default Vue.extend({
+  name: 'Layers'
+});
 </script>
 
 <style lang="scss" scoped>
