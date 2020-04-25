@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  height: 100vh;
+  padding: 0 6em 2em 6em;
+  min-height: $min_height;
+  position: relative;
+  width: 100%;
+
+  @media ($mobile) {
+    padding: 0 2em 2em 2em;
+  }
+}

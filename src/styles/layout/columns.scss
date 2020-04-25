@@ -1,6 +1,10 @@
 .columns {
   display: flex;
 
+  @media ($mobile) {
+    flex-direction: column;
+  }
+
   &.is-vcentered {
     align-items: center;
   }
@@ -16,5 +20,9 @@
 
   .column {
     width: 50%;
+
+    @media ($mobile) {
+      width: 100%;
+    }
   }
 }

@@ -54,7 +54,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import About from '@/components/common/About/About.vue';
+import About from '@/components/about/About.vue';
 import Advantages from '@/components/advantages/Advantages.vue';
 import Contact from '@/components/contact/Contact.vue';
 import Devices from '@/components/devices/Devices.vue';

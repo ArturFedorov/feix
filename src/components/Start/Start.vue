@@ -17,9 +17,7 @@
         </h1>
       </div>
       <div class="columns">
-        <img
-          class="start-logo last"
-          src="../../assets/logo.svg" alt="logo">
+        <Logo class="start-logo last" />
       </div>
     </div>
   </div>
@@ -57,19 +55,31 @@ export default Vue.extend({
     height: 100vh;
     padding: 0 6em 2em 6em;
 
+    @media ($mobile) {
+      padding: 0 2em 2em 2em;
+      justify-content: center;
+    }
+
     &-heading {
-      @media ($desktop) {
+      @media ($mobile) {
+        margin: 4em 0 3em 0;
+
         .h0 {
-          font-size: $font-size-h1;
+          font-size: $font-size-h3;
         }
       }
     }
+
 
     &-caption {
       margin-top: auto;
 
       @media ($desktop) {
         font-size: $font-size-h4;
+      }
+
+      @media ($mobile) {
+        display: none;
       }
     }
 
@@ -79,6 +89,18 @@ export default Vue.extend({
 
       &.is-right {
         justify-content: space-between;
+
+        @media ($mobile) {
+          margin-top: auto;
+        }
+      }
+
+      &.is-left {
+        @media ($mobile) {
+          position: absolute;
+          top: 0;
+          height: 50%;
+        }
       }
     }
 
@@ -93,14 +115,17 @@ export default Vue.extend({
         top: -10%;
         left: -30%;
       }
+
+      @media ($mobile) {
+        height: auto;
+      }
     }
 
     &-logo {
-      width: 140px;
       margin-left: auto;
 
-      @media ($desktop) {
-        width: 100px;
+      @media ($mobile) {
+        margin-left: 0;
       }
     }
   }

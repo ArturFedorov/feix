@@ -1,5 +1,5 @@
 <template>
-  <div class="features">
+  <div class="features section">
     <div class="features-images is-right">
       <img src="../../assets/images/wave-right.png" alt="wave-left">
     </div>
@@ -22,9 +22,8 @@
     <div class="features-images is-left">
       <img src="../../assets/images/wave-left.png" alt="wave-left">
     </div>
-    <img
-      class="features-logo"
-      src="../../assets/logo.svg" alt="logo">
+    <Logo
+      class="features-logo" />
   </div>
 </template>
 
@@ -100,13 +99,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .features {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    min-height: $min_height;
-    position: relative;
     align-items: center;
-    padding: 0 6em 2em 6em;
 
     &-content {
       display: flex;
@@ -116,6 +109,11 @@ export default Vue.extend({
       &-item {
         min-width: 25%;
         margin-bottom: 10em;
+
+        @media ($mobile) {
+          margin-bottom: 5em;
+          width: 50%;
+        }
       }
     }
 
@@ -123,10 +121,18 @@ export default Vue.extend({
       position: absolute;
       transform-origin: right center;
 
+      @media ($mobile) {
+        max-width: 70%;
+      }
+
       &.is-left {
         bottom: 0;
         left: 0;
         transform-origin: left center;
+
+        @media ($mobile) {
+          left: -60%;
+        }
       }
 
       &.is-right {
@@ -136,13 +142,13 @@ export default Vue.extend({
     }
 
     &-logo {
-      width: 140px;
       position: absolute;
       bottom: 6em;
       right: 6em;
 
-      @media ($desktop) {
-        width: 100px;
+      @media ($mobile) {
+        right: 2em;
+        bottom: 2em;
       }
     }
   }

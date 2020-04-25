@@ -1,6 +1,6 @@
 <template>
-  <div class="devices">
-    <h1 class="h0 is-white-text devices-header">
+  <div class="devices section">
+    <h1 class="h0 is-white-text devices-header header-animate">
       Runs on every device
     </h1>
     <div class="columns devices-section">
@@ -12,16 +12,18 @@
         </div>
       </div>
 
-      <div class="column columns is-vcentered devices-column">
-        <h2 class="is-white-text">
-          Real time data analysys and
+      <div class="column devices-column">
+        <h2 class="is-white-text devices-subheader header-animate">
+          Real time data analysis and
+        </h2>
+        <h2 class="is-white-text header-animate">
           optimisation suggestion
         </h2>
       </div>
     </div>
     <div class="columns devices-section">
       <div class="column columns is-column is-vcentered devices-column is-left">
-        <h2 class="is-white-text">
+        <h2 class="is-white-text header-animate">
           High perfomance on mobile devices
         </h2>
       </div>
@@ -31,26 +33,88 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import {AnimationService} from '@/shared/services/AnimationService';
 export default Vue.extend({
-  name: 'Devices'
+  name: 'Devices',
+  props: {
+    startAnimation: {
+      type: Boolean,
+      default: false
+    }
+  },
+  mounted(): void {
+    AnimationService.timeLine()
+      .set('.devices', {
+        backgroundColor: '#ffffff'
+      })
+      .set('.devices-laptop', {
+        opacity: 0,
+        x: -100
+      })
+      .set('.header-animate', {
+        opacity: 0,
+        y: 100
+      });
+
+    if(this.startAnimation) {
+      this.startScreenAnimation();
+    }
+  },
+  methods: {
+    startScreenAnimation() {
+      AnimationService.timeLine({
+        duration: 1.5,
+        ease: AnimationService.easing.power1.easeInOut
+      })
+        .to('.devices', {
+          delay: 0.5,
+          backgroundColor: '#2CBFBF'
+        })
+        .to('.header-animate', {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2
+        })
+        .to('.devices-laptop', {
+          delay: -1,
+          opacity: 1,
+          x: 0
+        })
+    }
+  },
+  watch: {
+    startAnimation(newValue: boolean) {
+      if(newValue) {
+        this.startScreenAnimation();
+      }
+    }
+  }
 });
 </script>
 
 <style lang="scss" scoped>
   .devices {
-    display: flex;
     flex-direction: column;
-    width: 100%;
-    height: $min_height*1.5;
-    position: relative;
-    padding: 18em 6em 2em 6em;
     background-color: $green;
     margin-top: -150px;
     z-index: 1;
     overflow-x: hidden;
+    padding-top: 18em;
+    height: $min_height*1.5;
+
+    @media ($mobile) {
+      margin-top: -50px;
+      padding-top: 5em;
+      min-height: $min_height;
+      height: $min_height;
+    }
 
     &-header {
       margin: 3em 0 3em 0;
+    }
+
+    &-subheader {
+      margin-top: 3em;
     }
 
     &-column {
@@ -79,14 +143,10 @@ export default Vue.extend({
       position: absolute;
       left: -6em;
       width: 100%;
-    }
 
-    &-wave {
-      position: absolute;
-      left: -7%;
-      width: 115%;
-      bottom: -20%;
-      transform-origin: left center;
+      @media ($mobile) {
+        left: -2em;
+      }
     }
   }
 </style>

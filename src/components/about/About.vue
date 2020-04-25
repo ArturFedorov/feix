@@ -1,5 +1,5 @@
 <template>
-  <div class="about columns">
+  <div class="about columns section">
     <div class="column about-column">
       <Dots
         :startAnimation.sync="startAnimation"
@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Dots from '@/components/common/About/Dots/Dots.vue';
+import Dots from '@/components/about/Dots/Dots.vue';
 import {AnimationService} from '@/shared/services/AnimationService';
 export default Vue.extend({
   name: 'About',
@@ -78,9 +78,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .about {
-    height: 100vh;
-    padding: 6em 6em 2em 6em;
-    min-height: $min_height;
+    padding-top: 6em;
 
     &-column {
       position: relative;
@@ -88,17 +86,15 @@ export default Vue.extend({
 
     &-heading {
       margin-bottom: 4em;
-
-      @media ($desktop) {
-        .h0 {
-          font-size: $font-size-h1;
-        }
-      }
     }
 
     &-text {
       margin-bottom: 4em;
       max-width: 70%;
+
+      @media ($mobile) {
+        max-width: 100%;
+      }
     }
 
     &-image {

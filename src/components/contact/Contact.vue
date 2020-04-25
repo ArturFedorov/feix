@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div class="section contact">
     <h1 class="h0 is-purple-text contact-header">
       Contact us
     </h1>
@@ -48,13 +48,13 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .contact {
-    position: relative;
-    height: 100vh;
-    padding: 6em 6em 2em 6em;
-    min-height: $min_height;
-    display: flex;
+    padding-top: 6em;
     flex-direction: column;
     justify-content: center;
+
+    @media ($mobile) {
+      min-height: auto;
+    }
 
     &-header {
       margin-bottom: 4em;
@@ -62,6 +62,10 @@ export default Vue.extend({
 
     &-item {
       flex: 1;
+
+      @media ($mobile) {
+        margin-bottom: 4em;
+      }
     }
   }
 </style>

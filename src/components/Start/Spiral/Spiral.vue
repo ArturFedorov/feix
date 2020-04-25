@@ -5015,7 +5015,6 @@
       </linearGradient>
     </defs>
   </svg>
-
 </template>
 
 <script lang="ts">

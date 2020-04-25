@@ -1,5 +1,5 @@
 <template>
-  <div class="advantages">
+  <div class="advantages section">
     <div class="advantages-content">
       <h1 class="h0 is-purple-text advantages-header">
         Our key advantages
@@ -106,12 +106,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .advantages {
-    height: 100vh;
-    width: 100%;
-    min-height: $min_height;
-    position: relative;
-    padding: 0 6em 2em 6em;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 2;
@@ -125,9 +119,18 @@ export default Vue.extend({
       justify-content: space-between;
       margin-bottom: 6em;
 
+      @media ($mobile) {
+        flex-direction: column;
+      }
+
       &-item {
         flex: 1;
         max-width: 25%;
+
+        @media ($mobile) {
+          max-width: 100%;
+          margin-bottom: 5em;
+        }
       }
     }
 
