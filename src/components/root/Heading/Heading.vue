@@ -1,6 +1,8 @@
 <template>
   <div class="heading">
-    <svg width="1509" height="736" viewBox="0 0 1509 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="1509" height="736" viewBox="0 0 1509 736" fill="none" xmlns="http://www.w3.org/2000/svg"
+      :class="{'is-blended': sideNavigationOpened}">
       <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="365" y="0" width="1821" height="210">
         <rect x="365" width="1821" height="210" fill="#C4C4C4"/>
       </mask>
@@ -42,9 +44,11 @@
 <script lang="ts">
 import Vue from 'vue';
 import {AnimationService} from '@/shared/services/AnimationService';
+import {navigationMixin} from '@/components/common/navigation.mixin';
 
 export default Vue.extend({
   name: 'Heading',
+  mixins: [navigationMixin],
   mounted() {
     AnimationService.timeLine()
       .from('path:not(.green)', {
@@ -70,8 +74,17 @@ export default Vue.extend({
     position: relative;
   }
 
-  svg {
+  path {
+    trasition: all 0.5s;
+  }
 
+  svg {
+    &.is-blended {
+      path:not(.green) {
+        fill: none;
+        stroke: $purple-light;
+      }
+    }
   }
 
   .green {

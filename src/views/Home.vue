@@ -18,7 +18,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
   .home {
     height: 100%;
-    padding: 0 $building-unit-x6;
+    padding: $building-unit-x4 $building-unit-x6 0 $building-unit-x6;
     overflow-x: hidden;
   }
 </style>
