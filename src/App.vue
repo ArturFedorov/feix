@@ -1,30 +1,39 @@
 <template>
-  <div id="app">
-    <div class="main">
-      <div class="main-left grid-left">
-
-      </div>
-      <div class="main-content grid-main">
-        <router-view />
-      </div>
-      <div class="main-actions grid-right">
-
-      </div>
+  <div
+    id="app"
+    class="app"
+    :class="{'is-blended': sideNavigationOpened}">
+    <Header />
+    <div class="app-content">
+      <router-view />
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import Header from '@/components/root/Header/Header.vue';
+import {navigationMixin} from '@/components/common/navigation.mixin';
+
 export default Vue.extend({
-  name: 'App'
+  name: 'App',
+  mixins: [navigationMixin],
+  components: {
+    Header
+  }
 });
 </script>
 <style lang="scss">
-  .main {
+  .app {
+    height: 100vh;
+    background-color: $white;
+    transition: $transition-default;
+
     &-content {
+      padding-top: $header-height;
     }
 
-    &-actions {
+    &.is-blended {
+      background-color: $pinkish;
     }
   }
 </style>

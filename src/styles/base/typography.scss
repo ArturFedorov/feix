@@ -5,28 +5,26 @@
   font-size: $fontSize;
 }
 
-.h0 {
-  @include font-face($font-bold, $font-size-h0);
-  @include fluid-type($min_width, $max_width, $font-size-h4, $font-size-h1);
-}
 
 h1 {
   @include font-face($font-bold, $font-size-h1);
 }
 
 h2 {
-  @include font-face($font-bold, $font-size-h3);
-  @include fluid-type($min_width, $max_width, $font-size-h4, $font-size-h3);
+  @include font-face($font-bold, $font-size-h2);
 }
 
 h3 {
-  @include font-face($font-thin, $font-size-h3);
-  @include fluid-type($min_width, $max_width, $font-size-base, $font-size-h3);
+  @include font-face($font-medium, $font-size-h3);
 }
 
 
 p {
   @include font-face($font-regular, $font-size-base);
+
+  &.is-medium {
+    font-weight: $font-medium;
+  }
 
   &.is-light {
     font-weight: $font-thin;
@@ -34,9 +32,8 @@ p {
 }
 
 a {
-  @include font-face($font-regular, $font-size-h4);
-  @include fluid-type($min_width, $max_width, $font-size-base, $font-size-h4);
-  text-decoration: underline;
+  @include font-face($font-regular, $font-size-h3);
+  text-decoration: none;
 }
 
 

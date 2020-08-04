@@ -7,7 +7,6 @@ module.exports = {
     'plugin:vue/essential',
     'eslint:recommended',
     '@vue/typescript/recommended',
-    //'@vue/prettier',
     '@vue/prettier/@typescript-eslint'
   ],
   parserOptions: {
@@ -16,7 +15,7 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    //'prettier/prettier': ['error', { singleQuote: true }],
+    '@typescript-eslint/interface-name-prefix': [2, { 'prefixWithI': 'always' }],
     indent: ['warn', 2],
     quotes: [2, 'single', { avoidEscape: true }]
   },

@@ -1,10 +1,11 @@
 // colors
-$purple: #762CBF;
+
 $purple-light: #5F5CBF;
-$blue: #2C2CBF;
 $green: #2CBFBF;
+$pinkish: #F3F2FF;
 $gray: #808080;
 $white: #ffffff;
+$black: #121212;
 
 // Building Units
 $building-unit: 8px;
@@ -24,7 +25,7 @@ $building-unit-x12: $building-unit * 12; // 96px
 // Border
 $border: 1px solid $gray;
 // Transition
-$transition-duration-default: 0.3s;
+$transition-default: all 0.5s;
 
 // Typography
 $font-family: 'tt-norms';
@@ -34,14 +35,13 @@ $font_path: '/fonts/';
 $font-size-base: 18px;
 $font-size-small: 16px;
 $font-size-caption: 12px;
-$font-size-h0: 75px;
-$font-size-h1: 64px;
+$font-size-h1: 175px;
 $font-size-h2: 48px;
-$font-size-h3: 36px;
-$font-size-h4: 24px;
+$font-size-h3: 24px;
 
 // line-height
 $line-height-base: 1.2;
+$header-height: 152px;
 
 // font-weights
 $font-thin: 100;
