@@ -24,12 +24,12 @@ export default Vue.extend({
 </script>
 <style lang="scss">
   .app {
-    height: 100vh;
     background-color: $white;
     transition: $transition-default;
 
     &-content {
       padding-top: $header-height;
+      height: 100vh;
     }
 
     &.is-blended {

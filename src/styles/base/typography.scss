@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-  @include font-face($font-bold, $font-size-h2);
+  @include font-face($font-regular, $font-size-h2);
 }
 
 h3 {
@@ -29,11 +29,20 @@ p {
   &.is-light {
     font-weight: $font-thin;
   }
+
+  &.is-caption {
+    font-size: $font-size-small;
+  }
 }
 
 a {
   @include font-face($font-regular, $font-size-h3);
   text-decoration: none;
+  color: $black;
+
+  &.is-caption {
+    font-size: $font-size-small;
+  }
 }
 
 
@@ -43,4 +52,12 @@ a {
 
 .is-white-text {
   color: $white;
+}
+
+.is-secondary {
+  color: $gray;
+}
+
+.is-underlined {
+  text-decoration: underline;
 }

@@ -52,17 +52,15 @@ export default Vue.extend({
   mounted() {
     AnimationService.timeLine()
       .from('path:not(.green)', {
-        duration: 0.9,
-        // scaleY: 1.02,
-        // // repeat: -1,
-        // stagger: 0.01,
-        // yoyo: true
+        duration: 1.3,
         opacity: 0,
         y: 300,
         ease: AnimationService.easing.power1.easeOut,
-        stagger: 0.1
+        stagger: 0.3
       }).from('.green', {
-        opacity: 0
+        duration: 1,
+        opacity: 0,
+        stagger: -0.2
       })
   }
 });
@@ -74,14 +72,17 @@ export default Vue.extend({
     position: relative;
   }
 
-  path {
-    trasition: all 0.5s;
-  }
-
   svg {
+    path:not(.green) {
+      fill: $purple-light;
+      transition: fill 0.8s ease-in;
+      stroke: none;
+    }
+
     &.is-blended {
       path:not(.green) {
-        fill: none;
+        transition: fill 0.5s ease-out, stroke 0.7s ease-out;
+        fill: $pinkish;
         stroke: $purple-light;
       }
     }
