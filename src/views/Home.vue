@@ -1,17 +1,23 @@
 <template>
   <div class="home">
     <Heading />
+    <About />
+    <Features />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import About from '@/components/home/About/About.vue';
 import Heading from '@/components/root/Heading/Heading.vue';
+import Features from '@/components/home/Features/Features.vue';
 
 export default Vue.extend({
   name: 'Home',
   components: {
-    Heading
+    About,
+    Heading,
+    Features
   }
 });
 </script>

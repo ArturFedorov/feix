@@ -43,7 +43,7 @@
               <p class="is-secondary is-caption">
                 Get in touch
               </p>
-              <a class="navigation-text is-caption is-underlined">
+              <a class="navigation-text is-caption">
                 feix@t-systems.com
               </a>
             </div>
@@ -80,7 +80,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {navigationMixin} from '@/components/common/navigation.mixin';
+import {navigationMixin} from '@/components/common/mixins/navigation.mixin';
 
 export default Vue.extend({
   name: 'Navigation',
@@ -201,5 +201,9 @@ export default Vue.extend({
       cursor: pointer;
       align-items: center;
     }
+  }
+
+  .svg-icon-cheeta {
+    fill: $black;
   }
 </style>

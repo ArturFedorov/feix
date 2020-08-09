@@ -4,7 +4,9 @@
     class="app"
     :class="{'is-blended': sideNavigationOpened}">
     <Header />
-    <div class="app-content">
+    <div
+      class="app-content"
+      ref="app">
       <router-view />
     </div>
   </div>
@@ -12,13 +14,20 @@
 <script lang="ts">
 import Vue from 'vue';
 import Header from '@/components/root/Header/Header.vue';
-import {navigationMixin} from '@/components/common/navigation.mixin';
+import {navigationMixin} from '@/components/common/mixins/navigation.mixin';
+import SmoothScrollbar from 'smooth-scrollbar';
 
 export default Vue.extend({
   name: 'App',
   mixins: [navigationMixin],
   components: {
     Header
+  },
+  mounted() {
+    SmoothScrollbar.init(this.$refs.app as HTMLElement, {
+      damping: 0.03,
+      thumbMinSize: 15,
+    });
   }
 });
 </script>

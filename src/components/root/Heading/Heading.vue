@@ -44,7 +44,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import {AnimationService} from '@/shared/services/AnimationService';
-import {navigationMixin} from '@/components/common/navigation.mixin';
+import {navigationMixin} from '@/components/common/mixins/navigation.mixin';
 
 export default Vue.extend({
   name: 'Heading',
@@ -68,7 +68,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .heading {
-    padding-left: 20%;
+    // padding-left: 20%;
     position: relative;
   }
 
@@ -80,10 +80,14 @@ export default Vue.extend({
     }
 
     &.is-blended {
-      path:not(.green) {
+      path {
         transition: fill 0.5s ease-out, stroke 0.7s ease-out;
         fill: $pinkish;
         stroke: $purple-light;
+
+        &.green {
+          stroke: $green;
+        }
       }
     }
   }
